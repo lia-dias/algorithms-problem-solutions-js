@@ -9,6 +9,7 @@ class Graph {
      * @param {Array<[indexSrc, indexDest, weigth]>} e list of edges containing vertex indices and weigths
      */
     constructor (size, e) {
+        this._size = size;
         this._adj = new Array(size);
         for(let i = 0; i < size; i++) this._adj[i] = new LinkedList();
         for(const edge of e) {
@@ -22,6 +23,14 @@ class Graph {
      */
     adj(index) {
         return this._adj[index] ? this._adj[index].head() : null;
+    }
+
+    /**
+     * Returns the size of graph, i.e., number of vertex
+     * @returns {number} number of vertex
+     */
+    size() {
+        return this._size;
     }
 }
 
