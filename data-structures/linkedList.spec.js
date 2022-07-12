@@ -30,3 +30,8 @@ assert(linkedList.head().data === 0, "Head value different");
 assert(linkedList.tail().data === 2, "Tail value different");
 assert(linkedList.length() === 2, "Invalid Linked List length");
 
+linkedList.remove({data: 0});
+
+assert(linkedList.head().data === 2, "Head value different");
+assert(linkedList.tail().data === 2, "Tail value different");
+assert(linkedList.length() === 1, "Invalid Linked List length");

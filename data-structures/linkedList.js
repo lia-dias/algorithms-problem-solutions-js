@@ -57,7 +57,8 @@ class LinkedList {
             curr = curr.next;
         }
         if(curr) {
-            prev.next = curr.next;
+            if(curr === this._head) this._head = curr.next;
+            else prev.next = curr.next;
         }
         return curr;
     }
